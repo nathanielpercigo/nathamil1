@@ -11,7 +11,10 @@ function criaCartao (categoria, pergunta, resposta){
                 <p>${resposta}</p>
             </div></>
 
-        let respostaEstaVisivel = false;
+let respostaEstaVisivel = false;
+
+function viraCartao(){
+    respostaEstaVisivel
 
 container.appendChild(cartao);
 }
