@@ -6,16 +6,16 @@ criaCartao(
 criaCartao(
     'Matemática',
     'Qual é o sen(45?',
-    ''√2/2')
+    '√2/2')
     
 criaCartao(
     'História',
     'Qual foi o primeiro presidente dos Estados Unidos?',
-    ''George Washington')
+    'George Washington')
     
 criaCartao(
     'História',
-    ''Qual foi o primeiro presidente do Brasil?',
+    'Qual foi o primeiro presidente do Brasil?',
     'Deodoro da Fonseca')
     
 criaCartao(
