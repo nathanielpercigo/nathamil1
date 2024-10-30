@@ -1,15 +1,28 @@
 :root{
-    --fundo:
-    --cartao-frente:
-    --cartao-verso:
-    --destaque:
-    --preto:
-    --branco:
+    --fundo: #87CEFA;
+    --cartao-frente: #468284;
+    --cartao-verso: #7FFFD4;
+    --destaque: #0000CD;
+    --preto: black;
+    --branco: white;
 }
 
 body{
     background-color: var(--fundo);
 }
+
+header{
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: VAR(--preto);
+}
+
+header a{
+    color: var(--branco);
+    text-decoration: none;
+}
+
 footer{
     position: fixed;
     bottom: 0;
