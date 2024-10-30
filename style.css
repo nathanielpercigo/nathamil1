@@ -44,6 +44,7 @@ footer{
     font-size: 1vw;
 }
 
+.pergunta,
 .resposta-cartao{
     font-weight: 700;
     color: var(--destaque);
