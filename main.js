@@ -15,6 +15,9 @@ let respostaEstaVisivel = false;
 
 function viraCartao(){
     respostaEstaVisivel
+    cartao.classList.toggle('active', respostaEstaVisivel);
+}
+    
 
 container.appendChild(cartao);
 }
