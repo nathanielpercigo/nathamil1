@@ -27,4 +27,5 @@
     background-color: var(--cartao-frente);
     padding: 40px;
     color: var(--branco);
+    display: none;
 }
