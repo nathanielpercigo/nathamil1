@@ -2,7 +2,7 @@
     --fundo:#6c8ca0ab;
     --cartao-frente:#1cc72ae1;
 --cartao-verso:#1c7c24;
---destaque:#0000cdc0;
+--destaque:#ffffffc0;
 --preto:black;
 --branco:white;
 }
@@ -14,7 +14,7 @@ background-color: var(--fundo);
    padding: 2rem;
 display: flex;
 justify-content: space-around;
-background-color: #000000;
+background-color: #5c5a5abd;
 }
 header a{
    color: var(--destaque);
