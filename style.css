@@ -14,7 +14,7 @@ background-color: var(--fundo);
    padding: 2rem;
 display: flex;
 justify-content: space-around;
-background-color: #87CEFA;
+background-color: #000000;
 }
 header a{
    color: var(--destaque);
