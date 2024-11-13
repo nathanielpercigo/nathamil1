@@ -15,11 +15,11 @@ header{
     padding: 2rem;
     display: flex;
     justify-content: space-around;
-    background-color: VAR(--preto);
+    background-color: VAR(--fundo);
 }
 
 header a{
-    color: var(--branco);
+    color: var(--destaque);
     text-decoration: none;
 }
 
