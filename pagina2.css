@@ -1,8 +1,8 @@
 :root{
-    --fundo:#87CEFA;
-    --cartao-frente:#4682B4;
+    --fundo:#6c8ca0ab;
+    --cartao-frente:#1cc72ae1;
 --cartao-verso:hsl(184, 89%, 21%);
---destaque:#0000CD;
+--destaque:#ffffffc0;
 --preto:black;
 --branco:white;
 }
@@ -14,7 +14,7 @@ header{
     padding: 2rem;
 display: flex;
 justify-content: space-around;
-background-color: #87CEFA;
+background-color: #5c5a5abd;
 }
 header a{
     color: var(--destaque);
