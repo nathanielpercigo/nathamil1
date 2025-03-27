@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #5A45FF;
-            --secondary-color: #7A67FF;
-            --background-color: #1E1E2E;
+            --primary-color: #6A11CB;
+            --secondary-color: #2575FC;
+            --background-color: #121212;
             --text-color: #FFFFFF;
             --accent-color: #FFD700;
         }
@@ -21,7 +21,7 @@
         }
 
         body {
-            background-color: var(--background-color);
+            background: linear-gradient(180deg, #1A1A2E, #16213E);
             color: var(--text-color);
             font-family: 'Poppins', sans-serif;
             text-align: center;
@@ -34,13 +34,14 @@
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
         }
 
         .menu-label, .nav-links a {
             font-size: 18px;
             font-weight: 600;
             padding: 10px 20px;
-            background-color: var(--accent-color);
+            background: linear-gradient(45deg, #FFC107, #FF9800);
             color: var(--background-color);
             border-radius: 8px;
             transition: 0.3s;
@@ -49,7 +50,7 @@
         }
 
         .menu-label:hover, .nav-links a:hover {
-            background-color: #FFC300;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
         }
 
         .menu-disciplinas {
@@ -57,7 +58,7 @@
             position: absolute;
             top: 60px;
             left: 10px;
-            background-color: var(--secondary-color);
+            background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
             border-radius: 8px;
             padding: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -73,13 +74,9 @@
         }
 
         .menu-disciplinas a:hover {
-            background-color: var(--accent-color);
+            background: var(--accent-color);
             color: var(--background-color);
             border-radius: 5px;
-        }
-
-        #menu-toggle:checked ~ .menu-disciplinas {
-            display: block;
         }
 
         .content {
@@ -112,9 +109,8 @@
 </head>
 <body>
     <header>
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-label">Disciplinas</label>
-        <nav class="menu-disciplinas">
+        <label class="menu-label" onclick="toggleMenu()">Disciplinas</label>
+        <nav class="menu-disciplinas" id="menuDisciplinas">
             <a onclick="mudarDisciplina('Matemática')">Matemática</a>
             <a onclick="mudarDisciplina('Física')">Física</a>
             <a onclick="mudarDisciplina('Química')">Química</a>
@@ -147,6 +143,11 @@
             } else if (tipo === "projetos") {
                 conteudo.innerHTML = "<p>Aqui estão os projetos.</p>";
             }
+        }
+
+        function toggleMenu() {
+            let menu = document.getElementById("menuDisciplinas");
+            menu.style.display = menu.style.display === "block" ? "none" : "block";
         }
     </script>
 </body>
