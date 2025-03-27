@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -6,15 +6,22 @@
     <title>Portfólio</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #493D9E;
+            --secondary-color: #B2A5FF;
+            --background-color: #DAD2FF;
+            --text-color: white;
+        }
+
         body {
             margin: 0;
             padding: 0;
             background-color: black;
-            color: white;
+            color: var(--text-color);
             font-family: Arial, sans-serif;
         }
         header {
-            background-color: #493D9E;
+            background-color: var(--primary-color);
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -27,24 +34,35 @@
         .menu-label {
             cursor: pointer;
             font-size: 24px;
-            color: white;
+            color: var(--text-color);
+            background-color: var(--secondary-color);
+            padding: 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        #menu-toggle:checked + .menu-label {
+            background-color: var(--primary-color);
         }
         .menu-disciplinas {
             position: absolute;
             top: 100%;
             left: 0;
-            background-color: #B2A5FF;
+            background-color: var(--secondary-color);
             display: none;
             flex-direction: column;
+            border-radius: 5px;
+            padding: 5px;
         }
         .menu-disciplinas a {
             padding: 10px;
             text-decoration: none;
-            color: white;
+            color: var(--primary-color);
             display: block;
+            transition: background 0.3s;
+            cursor: pointer;
         }
         .menu-disciplinas a:hover {
-            background-color: #DAD2FF;
+            background-color: var(--background-color);
         }
         #menu-toggle:checked ~ .menu-disciplinas {
             display: flex;
@@ -54,8 +72,9 @@
             gap: 15px;
         }
         .nav-links a {
-            color: white;
+            color: var(--text-color);
             text-decoration: none;
+            cursor: pointer;
         }
         .nav-links a:hover {
             text-decoration: underline;
@@ -75,23 +94,41 @@
 <body>
     <header>
         <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-label material-icons">menu</label>
+        <label for="menu-toggle" class="menu-label">Disciplinas</label>
         <nav class="menu-disciplinas">
-            <a href="#">Matemática</a>
-            <a href="#">Física</a>
-            <a href="#">Química</a>
+            <a onclick="mudarDisciplina('Matemática')">Matemática</a>
+            <a onclick="mudarDisciplina('Física')">Física</a>
+            <a onclick="mudarDisciplina('Química')">Química</a>
         </nav>
         <nav class="nav-links">
-            <a href="#">Atividades</a>
-            <a href="#">Provas</a>
-            <a href="#">Projetos</a>
+            <a onclick="mostrarConteudo('atividades')">Atividades</a>
+            <a onclick="mostrarConteudo('provas')">Provas</a>
+            <a onclick="mostrarConteudo('projetos')">Projetos</a>
         </nav>
     </header>
     <div class="content">
         <h1>Portfólio</h1>
-        <h2>Matemática</h2>
+        <h2 id="disciplina">Matemática</h2>
+        <div id="conteudo">
+            <p>Bem-vindo ao conteúdo de Matemática.</p>
+        </div>
     </div>
+    <script>
+        function mudarDisciplina(nome) {
+            document.getElementById("disciplina").innerText = nome;
+            document.getElementById("conteudo").innerHTML = `<p>Bem-vindo ao conteúdo de ${nome}.</p>`;
+        }
+
+        function mostrarConteudo(tipo) {
+            let conteudo = document.getElementById("conteudo");
+            if (tipo === "atividades") {
+                conteudo.innerHTML = "<p>Aqui estão as atividades.</p>";
+            } else if (tipo === "provas") {
+                conteudo.innerHTML = "<p>Aqui estão as provas.</p>";
+            } else if (tipo === "projetos") {
+                conteudo.innerHTML = "<p>Aqui estão os projetos.</p>";
+            }
+        }
+    </script>
 </body>
 </html>
-
-
