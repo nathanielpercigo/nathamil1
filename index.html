@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botão Checkbox</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfólio de Disciplinas</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
         :root {
             --primary-color: #493d9e;
@@ -21,66 +21,67 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            flex-direction: column;
         }
 
         header {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
+            width: 100%;
             background-color: var(--primary-color);
-            padding: 20px;
-            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        #menu-toggle {
-            display: none;
-        }
-
-        .botao-disciplinas {
-            background-color: var(--secondary-color);
+        .logo {
+            font-size: 1.5rem;
             color: var(--text-color);
-            padding: 10px 20px;
+        }
+
+        .search-box {
+            padding: 5px;
             border-radius: 5px;
+            border: none;
+        }
+
+        .menu-hamburguer {
+            display: none;
             cursor: pointer;
+        }
+
+        .menu-hamburguer span {
+            font-size: 2rem;
+            color: var(--text-color);
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 10px;
             transition: background 0.3s;
         }
 
-        #menu-toggle:checked + .botao-disciplinas {
-            background-color: var(--primary-color);
+        nav a:hover {
+            background-color: var(--secondary-color);
         }
 
         .lista-vertical {
             display: none;
             position: absolute;
-            top: 100%;
             background-color: var(--secondary-color);
-            border-radius: 5px;
             padding: 10px;
-            margin-top: 5px;
+            border-radius: 5px;
+            top: 50px;
+            left: 0;
         }
 
-        .lista-vertical ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .lista-vertical li {
-            margin: 5px 0;
-        }
-
-        .lista-vertical a {
-            text-decoration: none;
-            color: var(--primary-color);
-            display: block;
-            padding: 5px;
-            transition: background 0.3s;
-        }
-
-        .lista-vertical a:hover {
-            background-color: var(--background-color);
+        #menu-toggle {
+            display: none;
         }
 
         #menu-toggle:checked ~ .lista-vertical {
@@ -90,17 +91,23 @@
 </head>
 <body>
     <header>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="botao-disciplinas">Disciplinas</label>
-        <nav class="lista-vertical">
-            <ul>
-                <li><a href="#">Matemática</a></li>
-                <li><a href="#">Física</a></li>
-                <li><a href="#">Química</a></li>
-                <li><a href="#">Biologia</a></li>
-            </ul>
-        </nav>
+        <div class="logo">Meu Portfólio</div>
+        <input type="text" class="search-box" placeholder="Pesquisar...">
+        <label for="menu-toggle" class="menu-hamburguer">
+            <span class="material-icons">menu</span>
+        </label>
     </header>
+    
+    <input type="checkbox" id="menu-toggle">
+    <nav class="lista-vertical">
+        <ul>
+            <li><a href="#">Matemática</a></li>
+            <li><a href="#">Física</a></li>
+            <li><a href="#">Química</a></li>
+            <li><a href="#">Biologia</a></li>
+        </ul>
+    </nav>
 </body>
 </html>
+
 
