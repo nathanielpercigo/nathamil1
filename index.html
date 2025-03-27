@@ -11,64 +11,81 @@
             --amarelo-claro: #FFF2AF;
             --roxo-claro: #B2A5FF;
         }
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--preto);
-            color: white;
+
+        /* Estilizando o Header */
+        header {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .menu-disciplina {
+            width: 100%;
+            background-color: var(--marinho);
+            padding: 1rem;
             position: relative;
-            display: inline-block;
+            justify-content: space-between;
+            align-items: center;
         }
+
+        /* Esconder o checkbox */
+        #menu-toggle {
+            display: none;
+        }
+
+        /* Estilizar o botão de disciplinas */
         .botao-disciplinas {
             background-color: var(--amarelo-claro);
             color: var(--marinho);
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
         }
+
+        /* Estilizar a lista vertical */
         .lista-vertical {
             display: none;
             position: absolute;
-            background-color: var(--preto);
-            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
-            padding: 10px;
+            background-color: var(--roxo-claro);
+            box-shadow: 0 2px 5px var(--marinho);
+            min-width: 190px;
+            z-index: 1;
+            left: 1rem;
+            top: 100%;
             border-radius: 5px;
-            min-width: 150px;
+            padding: 10px;
         }
+
         .lista-vertical a {
             display: block;
             padding: 8px;
             text-decoration: none;
             color: white;
-            background-color: var(--roxo-claro);
+            background-color: var(--marinho);
             border-radius: 3px;
             margin-bottom: 5px;
+            text-align: center;
         }
+
         .lista-vertical a:hover {
-            background-color: var(--marinho);
+            background-color: var(--preto);
         }
-        #menu-toggle {
-            display: none;
-        }
+
+        /* Exibir lista quando o checkbox estiver ativado */
         #menu-toggle:checked + .lista-vertical {
             display: block;
         }
     </style>
 </head>
 <body>
-    <div class="menu-disciplina">
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="botao-disciplinas">Disciplinas</label>
-        <div class="lista-vertical">
-            <a href="#">Matemática</a>
-            <a href="#">Física</a>
-            <a href="#">Química</a>
+    <header>
+        <div class="menu-disciplina">
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="botao-disciplinas">Disciplinas</label>
+            <div class="lista-vertical">
+                <a href="#">Matemática</a>
+                <a href="#">Física</a>
+                <a href="#">Química</a>
+            </div>
         </div>
-    </div>
+    </header>
 </body>
 </html>
