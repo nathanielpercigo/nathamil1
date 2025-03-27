@@ -1,25 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Menu Disciplinas</title>
+    <style>
+        :root {
+            --preto: #000000;
+            --marinho: #493D9E;
+            --amarelo-claro: #FFF2AF;
+            --roxo-claro: #B2A5FF;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--preto);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .menu-disciplina {
+            position: relative;
+            display: inline-block;
+        }
+        .botao-disciplinas {
+            background-color: var(--amarelo-claro);
+            color: var(--marinho);
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .lista-vertical {
+            display: none;
+            position: absolute;
+            background-color: var(--preto);
+            box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 150px;
+        }
+        .lista-vertical a {
+            display: block;
+            padding: 8px;
+            text-decoration: none;
+            color: white;
+            background-color: var(--roxo-claro);
+            border-radius: 3px;
+            margin-bottom: 5px;
+        }
+        .lista-vertical a:hover {
+            background-color: var(--marinho);
+        }
+        #menu-toggle {
+            display: none;
+        }
+        #menu-toggle:checked + .lista-vertical {
+            display: block;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <a href="index.html">Pagina 1</a>
-        <a href="pagina2.html">Pagina 2</a>
-    </header>
-
-
-    <section id="container">
-
-    </section>
-    <footer>
-        <p>Desenvolvido por: Nathaniel Percigo e Gian Margoti</p>
-    </footer>
-    <script src="main.js"></script>
-    <script src="perguntas.js"></script>
+    <div class="menu-disciplina">
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="botao-disciplinas">Disciplinas</label>
+        <div class="lista-vertical">
+            <a href="#">Matemática</a>
+            <a href="#">Física</a>
+            <a href="#">Química</a>
+        </div>
+    </div>
 </body>
 </html>
