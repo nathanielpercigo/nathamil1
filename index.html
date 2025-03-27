@@ -3,104 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Botão Checkbox</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Portfólio</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #493d9e;
-            --secondary-color: #b2a5ff;
-            --background-color: #dad2ff;
-            --text-color: #fff;
-        }
-
         body {
-            font-family: Arial, sans-serif;
-            background-color: var(--background-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
+            padding: 0;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
         }
-
         header {
-            position: relative;
+            background-color: #493D9E;
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            flex-direction: column;
-            background-color: var(--primary-color);
-            padding: 20px;
-            border-radius: 10px;
-        }
-
-        #menu-toggle {
-            display: none;
-        }
-
-        .botao-disciplinas {
-            background-color: var(--secondary-color);
-            color: var(--text-color);
             padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s;
+            position: relative;
         }
-
-        #menu-toggle:checked + .botao-disciplinas {
-            background-color: var(--primary-color);
-        }
-
-        .lista-vertical {
+        .menu-toggle {
             display: none;
+        }
+        .menu-label {
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+        }
+        .menu-disciplinas {
             position: absolute;
             top: 100%;
-            background-color: var(--secondary-color);
-            border-radius: 5px;
+            left: 0;
+            background-color: #B2A5FF;
+            display: none;
+            flex-direction: column;
+        }
+        .menu-disciplinas a {
             padding: 10px;
-            margin-top: 5px;
-        }
-
-        .lista-vertical ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .lista-vertical li {
-            margin: 5px 0;
-        }
-
-        .lista-vertical a {
             text-decoration: none;
-            color: var(--primary-color);
+            color: white;
             display: block;
-            padding: 5px;
-            transition: background 0.3s;
         }
-
-        .lista-vertical a:hover {
-            background-color: var(--background-color);
+        .menu-disciplinas a:hover {
+            background-color: #DAD2FF;
         }
-
-        #menu-toggle:checked ~ .lista-vertical {
-            display: block;
+        #menu-toggle:checked ~ .menu-disciplinas {
+            display: flex;
+        }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .content h1 {
+            color: #007BFF;
+        }
+        .content h2 {
+            color: #FFD700;
         }
     </style>
 </head>
 <body>
     <header>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="botao-disciplinas">Disciplinas</label>
-        <nav class="lista-vertical">
-            <ul>
-                <li><a href="#">Matemática</a></li>
-                <li><a href="#">Física</a></li>
-                <li><a href="#">Química</a></li>
-                <li><a href="#">Biologia</a></li>
-            </ul>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-label material-icons">menu</label>
+        <nav class="menu-disciplinas">
+            <a href="#">Matemática</a>
+            <a href="#">Física</a>
+            <a href="#">Química</a>
+        </nav>
+        <nav class="nav-links">
+            <a href="#">Atividades</a>
+            <a href="#">Provas</a>
+            <a href="#">Projetos</a>
         </nav>
     </header>
+    <div class="content">
+        <h1>Portfólio</h1>
+        <h2>Matemática</h2>
+    </div>
 </body>
 </html>
+
 
