@@ -9,19 +9,15 @@
         :root {
             --primary-color: #493d9e;
             --secondary-color: #b2a5ff;
-            --background-color: #dad2ff;
+            --background-color: #000;
             --text-color: #fff;
         }
 
         body {
             font-family: Arial, sans-serif;
             background-color: var(--background-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
-            flex-direction: column;
+            padding: 0;
         }
 
         header {
@@ -31,43 +27,25 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            color: var(--text-color);
-        }
-
-        .search-box {
-            padding: 5px;
-            border-radius: 5px;
-            border: none;
+            position: relative;
         }
 
         .menu-hamburguer {
-            display: none;
             cursor: pointer;
-        }
-
-        .menu-hamburguer span {
-            font-size: 2rem;
             color: var(--text-color);
+            font-size: 24px;
+            padding: 5px;
         }
 
         nav {
             display: flex;
-            gap: 15px;
+            gap: 20px;
         }
 
         nav a {
             color: var(--text-color);
             text-decoration: none;
-            padding: 10px;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background-color: var(--secondary-color);
+            font-size: 18px;
         }
 
         .lista-vertical {
@@ -75,9 +53,26 @@
             position: absolute;
             background-color: var(--secondary-color);
             padding: 10px;
-            border-radius: 5px;
             top: 50px;
             left: 0;
+            border-radius: 5px;
+        }
+
+        .lista-vertical ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .lista-vertical li {
+            margin: 5px 0;
+        }
+
+        .lista-vertical a {
+            text-decoration: none;
+            color: var(--primary-color);
+            display: block;
+            padding: 5px;
         }
 
         #menu-toggle {
@@ -87,15 +82,34 @@
         #menu-toggle:checked ~ .lista-vertical {
             display: block;
         }
+
+        .conteudo {
+            text-align: center;
+            margin-top: 50px;
+            color: var(--text-color);
+        }
+
+        .conteudo h1 {
+            font-size: 36px;
+            color: #1E90FF;
+        }
+
+        .conteudo h2 {
+            font-size: 24px;
+            color: #FFD700;
+        }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Meu Portfólio</div>
-        <input type="text" class="search-box" placeholder="Pesquisar...">
         <label for="menu-toggle" class="menu-hamburguer">
             <span class="material-icons">menu</span>
         </label>
+        <nav>
+            <a href="#">Atividades</a>
+            <a href="#">Provas</a>
+            <a href="#">Projetos</a>
+        </nav>
     </header>
     
     <input type="checkbox" id="menu-toggle">
@@ -104,10 +118,12 @@
             <li><a href="#">Matemática</a></li>
             <li><a href="#">Física</a></li>
             <li><a href="#">Química</a></li>
-            <li><a href="#">Biologia</a></li>
         </ul>
     </nav>
+    
+    <div class="conteudo">
+        <h1>Portfólio</h1>
+        <h2>Matemática</h2>
+    </div>
 </body>
 </html>
-
-
