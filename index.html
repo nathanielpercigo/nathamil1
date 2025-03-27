@@ -4,90 +4,109 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #493D9E;
-            --secondary-color: #B2A5FF;
-            --background-color: #DAD2FF;
-            --text-color: white;
+            --primary-color: #5A45FF;
+            --secondary-color: #7A67FF;
+            --background-color: #1E1E2E;
+            --text-color: #FFFFFF;
+            --accent-color: #FFD700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
+            background-color: var(--background-color);
             color: var(--text-color);
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
         }
+
         header {
-            background-color: var(--primary-color);
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .menu-label, .nav-links a {
+            font-size: 18px;
+            font-weight: 600;
             padding: 10px 20px;
-            position: relative;
-        }
-        .menu-toggle {
-            display: none;
-        }
-        .menu-label {
+            background-color: var(--accent-color);
+            color: var(--background-color);
+            border-radius: 8px;
+            transition: 0.3s;
             cursor: pointer;
-            font-size: 24px;
-            color: var(--text-color);
-            background-color: var(--secondary-color);
-            padding: 10px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        #menu-toggle:checked + .menu-label {
-            background-color: var(--primary-color);
-        }
-        .menu-disciplinas {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background-color: var(--secondary-color);
-            display: none;
-            flex-direction: column;
-            border-radius: 5px;
-            padding: 5px;
-        }
-        .menu-disciplinas a {
-            padding: 10px;
             text-decoration: none;
-            color: var(--primary-color);
+        }
+
+        .menu-label:hover, .nav-links a:hover {
+            background-color: #FFC300;
+        }
+
+        .menu-disciplinas {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .menu-disciplinas a {
             display: block;
-            transition: background 0.3s;
-            cursor: pointer;
+            padding: 10px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.3s;
         }
+
         .menu-disciplinas a:hover {
-            background-color: var(--background-color);
+            background-color: var(--accent-color);
+            color: var(--background-color);
+            border-radius: 5px;
         }
+
         #menu-toggle:checked ~ .menu-disciplinas {
-            display: flex;
+            display: block;
         }
+
+        .content {
+            margin-top: 50px;
+            padding: 20px;
+        }
+
+        .content h1 {
+            font-size: 42px;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .content h2 {
+            font-size: 32px;
+            color: var(--primary-color);
+        }
+
+        #conteudo {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
         .nav-links {
             display: flex;
             gap: 15px;
-        }
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .nav-links a:hover {
-            text-decoration: underline;
-        }
-        .content {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .content h1 {
-            color: #007BFF;
-        }
-        .content h2 {
-            color: #FFD700;
         }
     </style>
 </head>
